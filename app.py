@@ -52,7 +52,7 @@ def setImageLayersByPresentationMethod(img,path2folder,prefix):
         cv2.imshow('contours', image_copy)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        cv2.imwrite(path2folder+ "/binary/rgb/green_rgb_fields_new.jpg",image_copy)
+        cv2.imwrite(path2folder+ "/binary/rgb/green_rgb_fields_new.jpg",image_copy - tmp)
       
 
     if(prefix == "lab"):
@@ -66,7 +66,7 @@ def setImageLayersByPresentationMethod(img,path2folder,prefix):
         # cv2.drawContours( tmp, contours, -1, (255,0,0), 3, cv2.LINE_AA, hierarchy, 1 )
        
         output = cv2.drawContours(image=image_copy, contours=contours, contourIdx=-1, color=(22, 222, 30), thickness=3, lineType=cv2.LINE_AA)
-        cv2.imwrite(path2folder+ "/binary/lab/blue_lab_fields_new.jpg",output)
+        cv2.imwrite(path2folder+ "/binary/lab/blue_lab_fields_new.jpg",output - tmp)
 
 # def flood_fill_single(im, seed_point):
 #     """Perform a single flood fill operation.
